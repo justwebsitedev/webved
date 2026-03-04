@@ -1,11 +1,17 @@
-// Main JavaScript file
+document.addEventListener("DOMContentLoaded", function () {
 
-// Example: simple button click alert
-document.addEventListener('DOMContentLoaded', function() {
-    const buttons = document.querySelectorAll('button');
-    buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            alert('Button clicked!');
+    // Load Navbar
+    fetch("components/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
         });
-    });
+
+    // Load Footer
+    fetch("components/footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+
 });
